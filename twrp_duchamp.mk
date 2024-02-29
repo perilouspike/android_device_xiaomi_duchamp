@@ -27,9 +27,8 @@ PRODUCT_BRAND := POCO
 PRODUCT_MODEL := 2311DRK48G
 PRODUCT_MANUFACTURER := xiaomi
 
-PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="miodm_duchamp_global-user 14 UP1A.230905.011 V816.0.4.0.UNLMIXM release-keys"
-
-BUILD_FINGERPRINT := POCO/duchamp_global/duchamp:14/UP1A.230905.011/V816.0.4.0.UNLMIXM:user/release-keys
+# Hide Reflash TWRP & FUSE passthrough
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.twrp.vendor_boot=true \
+    persist.sys.fuse.passthrough.enable=true
+    
