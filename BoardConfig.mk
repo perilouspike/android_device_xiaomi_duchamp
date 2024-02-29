@@ -69,7 +69,6 @@ BOARD_HEADER_SIZE := 2128
 
 # Vendor CMD
 BOARD_VENDOR_CMDLINE := bootopt=64S3,32N2,64N2
-BOARD_VENDOR_CMDLINE += androidboot.force_normal_boot=1
 
 # Args
 BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
