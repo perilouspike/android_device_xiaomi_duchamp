@@ -1,7 +1,7 @@
 import /keymint.service.mitee.rc
 import /tee-supplicant.rc
 import /miteelog.rc
-import /xiaomi.haptic.hal.rc
+import /vibrator.haptic.hal.rc
 
 on init
     setprop sys.usb.configfs 1

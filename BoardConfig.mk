@@ -159,8 +159,6 @@ TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_INCLUDE_LIBRESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_RESETPROP := true
-TW_INCLUDE_LPDUMP := true
-TW_INCLUDE_LPTOOLS := true
 
 # Set brightness path and level
 TW_DEFAULT_BRIGHTNESS := 400
@@ -168,8 +166,14 @@ TW_MAX_BRIGHTNESS := 2047
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 
 # Excludes
-TW_EXCLUDE_TWRP_APP := true
 TW_EXCLUDE_APEX := true
+TW_EXCLUDE_PYTHON := true
+TW_EXCLUDE_NANO := true
+TW_EXCLUDE_TWRPAPP := true
+TW_EXCLUDE_TZDATA := true
+TW_EXCLUDE_BASH := true
+TW_EXCLUDE_LPTOOLS := true
+TW_EXCLUDE_LPDUMP := true
 
 # Debug-tools
 TWRP_INCLUDE_LOGCAT := true
