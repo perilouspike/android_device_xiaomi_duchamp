@@ -73,6 +73,9 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-impl.recovery \
     android.hardware.boot@1.1-service \
     android.hardware.boot@1.1-impl \
+    android.hardware.boot@1.0-impl \
+	android.hardware.boot@1.0-impl.recovery \
+	android.hardware.boot@1.0-service
 
 PRODUCT_PACKAGES += \
     bootctrl.mt6897
@@ -94,7 +97,10 @@ PRODUCT_PACKAGES += \
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
-    android.hardware.health@2.1-service
+    android.hardware.health@2.1-service \
+    android.hardware.health@2.0-service \
+    android.hardware.health@2.0-impl.recovery \
+    android.hardware.health@2.0-service.rc
 
 # Mtk plpath utils
 PRODUCT_PACKAGES += \
@@ -125,11 +131,15 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     android.hardware.vibrator-V1-ndk_platform \
     android.hardware.graphics.common@1.0 \
     libion \
-    libxml2
+    libxml2 \
+    android.hardware.health@2.0-impl-default \
+    android.hardware.boot@1.0
 
 TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.1.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.vibrator-V1-ndk_platform.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.graphics.common@1.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so    
+    $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.health@2.0-impl-default.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.boot@1.0.so
