@@ -41,6 +41,16 @@
         <name>netutils-wrapper</name>
         <version>1.0</version>
     </hal>
+     <hal format="aidl">
+        <name>android.hardware.boot</name>
+        <transport arch="32+64">passthrough</transport>        
+        <fqname>IBootControl/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>android.hardware.health</name>
+        <version>2</version>
+        <fqname>IHealth/default</fqname>
+    </hal>
     <system-sdk>
         <version>29</version>
         <version>30</version>
