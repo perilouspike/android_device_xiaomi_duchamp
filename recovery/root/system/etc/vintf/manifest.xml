@@ -40,16 +40,15 @@
     <hal format="native">
         <name>netutils-wrapper</name>
         <version>1.0</version>
-    </hal>
-     <hal format="aidl">
+     <hal format="hidl">
         <name>android.hardware.boot</name>
-        <transport arch="32+64">passthrough</transport>        
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+        <name>IBootControl</name>
+        <instance>default</instance>
+        </interface>
         <fqname>IBootControl/default</fqname>
-    </hal>
-    <hal format="aidl">
-        <name>android.hardware.health</name>
-        <version>2</version>
-        <fqname>IHealth/default</fqname>
     </hal>
     <system-sdk>
         <version>29</version>
