@@ -17,7 +17,7 @@ PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # API
-PRODUCT_SHIPPING_API_LEVEL := 32
+PRODUCT_SHIPPING_API_LEVEL := 31
 PRODUCT_TARGET_VNDK_VERSION := 34
 
 # A/B
@@ -81,7 +81,6 @@ PRODUCT_PACKAGES := \
     libgptutils \
     libz \
     libcutils \
-    bootctrl.mt6897.recovery
 
 PRODUCT_PACKAGES += \
     otapreopt_script \

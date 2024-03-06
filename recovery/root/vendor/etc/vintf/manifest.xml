@@ -260,8 +260,14 @@
         <transport>hwbinder</transport>
         <fqname>@1.0::IMiwillService/default</fqname>
     </hal>
-    <hal format="aidl">
+    <hal format="hidl">
         <name>android.hardware.boot</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+        <name>IBootControl</name>
+        <instance>default</instance>
+        </interface>
         <fqname>IBootControl/default</fqname>
     </hal>
     <sepolicy>

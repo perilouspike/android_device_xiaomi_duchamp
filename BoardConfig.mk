@@ -154,7 +154,6 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 TARGET_USES_MKE2FS := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
-TW_NO_FASTBOOT_BOOT := true
 
 # Include some binaries
 TW_INCLUDE_LIBRESETPROP := true
@@ -199,12 +198,12 @@ TW_LOAD_VENDOR_BOOT_MODULES := true
 # Maintainer/Version
 TW_DEVICE_VERSION := perilouspike/beta-1
 
-TW_LOAD_VENDOR_MODULES := "haptic.ko si_haptic.ko"
+TW_LOAD_VENDOR_MODULES := "haptic.ko"
 TW_SUPPORT_INPUT_AIDL_HAPTICS := true
 TW_SUPPORT_INPUT_AIDL_HAPTICS_FQNAME := "IVibrator/vibratorfeature"
 TW_SUPPORT_INPUT_AIDL_HAPTICS_FIX_OFF := true
-#TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone53/temp"
-#TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
-#TW_BATTERY_SYSFS_WAIT_SECONDS := 6
-TW_BACKUP_EXCLUSIONS := /data/fonts/files
-#TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
+TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone53/temp"
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
+TW_BATTERY_SYSFS_WAIT_SECONDS := 6
+TW_BACKUP_EXCLUSIONS := /data/fonts
+TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
