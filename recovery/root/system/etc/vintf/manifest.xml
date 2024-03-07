@@ -40,15 +40,6 @@
     <hal format="native">
         <name>netutils-wrapper</name>
         <version>1.0</version>
-     <hal format="hidl">
-        <name>android.hardware.boot</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-        <name>IBootControl</name>
-        <instance>default</instance>
-        </interface>
-        <fqname>IBootControl/default</fqname>
     </hal>
     <system-sdk>
         <version>29</version>

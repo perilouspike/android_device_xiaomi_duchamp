@@ -662,6 +662,7 @@
         }
       ]
     },
+    // MIUI ADD: Performance_MemoryEnhance
     {
       "Name": "MemoryFreezeProcess",
       "Actions": [
@@ -675,6 +676,7 @@
         }
       ]
     }
+    // END Performance_MemoryEnhance
   ],
 
   "AggregateProfiles": [
