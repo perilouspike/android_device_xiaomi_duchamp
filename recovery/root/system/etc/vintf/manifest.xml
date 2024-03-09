@@ -41,15 +41,22 @@
         <name>netutils-wrapper</name>
         <version>1.0</version>
     </hal>
-    <hal format="hidl">
+    <hal format="aidl">
         <name>android.hardware.boot</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
+        <fqname>IBootControl/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>android.system.keystore2</name>
+        <version>3</version>
         <interface>
-        <name>IBootControl</name>
-        <instance>default</instance>
+           <name>IKeystoreService</name>
+           <instance>default</instance>
         </interface>
-        <fqname>@1.0::IBootControl/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>android.hardware.health</name>
+        <version>2</version>
+        <fqname>IHealth/default</fqname>
     </hal>
     <system-sdk>
         <version>29</version>

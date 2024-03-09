@@ -95,30 +95,32 @@ on property:crypto.ready=1
     start vendor.keymint-mitee
 
 on property:hwservicemanager.ready=true
+    start miteelog
+    start tee-supplicant
     start vendor.keymint-mitee
-    start vendor.gatekeeper-1-0
+    start vendor.gatekeeper_mitee
 
 on property:ro.crypto.state=unsupported
     stop vendor.keymint-mitee
-    stop vendor.gatekeeper-1-0
+    stop vendor.gatekeeper_mitee
     stop tee-supplicant
     stop miteelog
     
 on property:ro.crypto.state=unencrypted
     stop vendor.keymint-mitee
-    stop vendor.gatekeeper-1-0
+    stop vendor.gatekeeper_mitee
     stop tee-supplicant
     stop miteelog
 
-on property:twrp.decrypt.done=true
+on property:twrp.all.users.decrypted=true
     stop vendor.keymint-mitee
-    stop vendor.gatekeeper-1-0
+    stop vendor.gatekeeper_mitee
     stop tee-supplicant
     stop miteelog
     
 on property:crypto.ready=0
     stop vendor.keymint-mitee
-    stop vendor.gatekeeper-1-0
+    stop vendor.gatekeeper_mitee
     stop tee-supplicant
     stop miteelog
 
