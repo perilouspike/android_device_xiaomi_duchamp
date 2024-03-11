@@ -260,23 +260,6 @@
         <transport>hwbinder</transport>
         <fqname>@1.0::IMiwillService/default</fqname>
     </hal>
-    <hal format="aidl">
-        <name>android.hardware.boot</name>
-        <fqname>IBootControl/default</fqname>
-    </hal>
-    <hal format="aidl">
-        <name>android.system.keystore2</name>
-        <version>3</version>
-        <interface>
-            <name>IKeystoreService</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl">
-        <name>android.hardware.health</name>
-        <version>2</version>
-        <fqname>IHealth/default</fqname>
-    </hal>
     <sepolicy>
         <version>34.0</version>
     </sepolicy>
