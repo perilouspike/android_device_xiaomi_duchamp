@@ -1,0 +1,10 @@
+<manifest version="1.0" type="device">
+    <hal format="aidl">
+        <name>vendor.mediatek.hardware.camera.isphal</name>
+        <version>1</version>
+        <interface>
+            <name>IISPModule</name>
+            <instance>internal/1</instance>
+        </interface>
+    </hal>
+</manifest>

@@ -1,12 +1,77 @@
-import /init.recovery.project.rc
+import /init.miteelog.rc
 
 on init
-    setprop sys.usb.configfs 1
-    setprop sys.usb.controller "11201000.usb0"
-
-on fs && property:ro.debuggable=0
-    # distinguish USB shoulde connect or not, i.e. CDP vs SDP
-    # set charging free due to it wait for USB activation
+    export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw:/system/lib64/hw
 
 on boot
+    start health-hal-2-1
     exec u:r:update_engine:s0 root root -- /system/bin/mtk_plpath_utils
+    start mtk.plpath.utils.link
+
+on fs
+    install_keyring
+    wait /dev/block/platform/bootdevice
+    symlink /dev/block/platform/bootdevice /dev/block/bootdevice
+    start boot-hal-1-2
+
+service mtk.plpath.utils.link /system/bin/mtk_plpath_utils
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0    
+
+service vendor.gatekeeper_mitee /vendor/bin/hw/android.hardware.gatekeeper-service.mitee
+    user root
+    group root drmrpc
+    disabled
+    seclabel u:r:recovery:s0
+
+service vendor.keymint-mitee /vendor/bin/hw/android.hardware.security.keymint@3.0-service.mitee
+    user root
+    group root drmrpc
+    disabled
+    seclabel u:r:recovery:s0
+
+service vendor.identity-mitee /vendor/bin/hw/android.hardware.identity-service.mitee@5.0
+    user root
+    group root drmrpc
+    disabled
+    seclabel u:r:recovery:s0
+
+on property:hwservicemanager.ready=true
+    start miteelog
+    start tee-supplicant
+    start vendor.keymint-mitee
+    start vendor.gatekeeper_mitee
+    start vendor.identity-mitee
+
+on property:ro.crypto.state=unsupported
+    stop miteelog
+    stop tee-supplicant
+    stop vendor.keymint-mitee
+    stop vendor.gatekeeper_mitee
+    stop vendor.identity-mitee
+    
+on property:ro.crypto.state=unencrypted
+    stop miteelog
+    stop tee-supplicant
+    stop vendor.keymint-mitee
+    stop vendor.gatekeeper_mitee
+    stop vendor.identity-mitee
+
+on property:twrp.all.users.decrypted=true
+    stop miteelog
+    stop tee-supplicant
+    stop vendor.keymint-mitee
+    stop vendor.gatekeeper_mitee
+    stop vendor.identity-mitee
+
+# We need vold early for metadata encryption
+on early-fs
+    start vold
+
+on late-fs
+    # Mount RW partitions which need run fsck
+    mount_all /first_stage_ramdisk/fstab.mt6897 --late    
