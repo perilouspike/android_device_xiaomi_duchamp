@@ -125,7 +125,7 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 TARGET_USES_MKE2FS := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
-TW_NO_FASTBOOT_BOOT := true
+#TW_NO_FASTBOOT_BOOT := true
 
 # Include some binaries
 TW_INCLUDE_LIBRESETPROP := true
