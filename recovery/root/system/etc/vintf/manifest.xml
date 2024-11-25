@@ -40,15 +40,16 @@
     <hal format="native">
         <name>netutils-wrapper</name>
         <version>1.0</version>
+    </hal>
      <hal format="hidl">
         <name>android.hardware.boot</name>
         <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-        <name>IBootControl</name>
-        <instance>default</instance>
-        </interface>
-        <fqname>IBootControl/default</fqname>
+        <fqname>@1.0::IBootControl/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>android.system.keystore2</name>
+        <version>3</version>
+        <fqname>IKeystoreService/default</fqname>
     </hal>
     <system-sdk>
         <version>29</version>
