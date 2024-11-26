@@ -12,6 +12,8 @@ on init
 
 on fs
     install_keyring
+    start boot-hal-1-2
+    symlink /dev/block/platform/bootdevice /dev/block/bootdevice
 
 # We need vold early for metadata encryption
 on early-fs
@@ -22,9 +24,6 @@ on late-fs
     mount_all /first_stage_ramdisk/fstab.mt6897 --late
 
 on post-fs
-    start boot-hal-1-2
-
-    symlink /dev/block/platform/bootdevice /dev/block/bootdevice
 
     exec u:r:update_engine:s0 root root -- /system/bin/mtk_plpath_utils
     start mtk.plpath.utils.link
@@ -95,32 +94,34 @@ on property:crypto.ready=1
     start vendor.keymint-mitee
 
 on property:hwservicemanager.ready=true
+    start miteelog
+    start tee-supplicant
     start vendor.keymint-mitee
-    start vendor.gatekeeper-1-0
+    start vendor.gatekeeper_mitee
 
 on property:ro.crypto.state=unsupported
     stop vendor.keymint-mitee
-    stop vendor.gatekeeper-1-0
+    stop vendor.gatekeeper_mitee
     stop tee-supplicant
     stop miteelog
     
 on property:ro.crypto.state=unencrypted
     stop vendor.keymint-mitee
-    stop vendor.gatekeeper-1-0
+    stop vendor.gatekeeper_mitee
     stop tee-supplicant
     stop miteelog
 
-on property:twrp.decrypt.done=true
+on property:twrp.all.users.decrypted=true
     stop vendor.keymint-mitee
-    stop vendor.gatekeeper-1-0
+    stop vendor.gatekeeper_mitee
     stop tee-supplicant
     stop miteelog
     
-on property:crypto.ready=0
-    stop vendor.keymint-mitee
-    stop vendor.gatekeeper-1-0
-    stop tee-supplicant
-    stop miteelog
+#on property:crypto.ready=0
+    #stop vendor.keymint-mitee
+    #stop vendor.gatekeeper_mitee
+    #stop tee-supplicant
+    #stop miteelog
 
 on property:twrp.modules.loaded=true
     start haptic_hal      

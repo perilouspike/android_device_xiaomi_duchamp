@@ -69,10 +69,11 @@ AB_OTA_POSTINSTALL_CONFIG += \
 # Boot control HAL
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-mtkimpl \
-    android.hardware.boot@1.2-mtkimpl.recovery
+    android.hardware.boot@1.2-mtkimpl.recovery \
+    bootctrl.mt6897.recovery
 
-PRODUCT_PACKAGES += \
-    android.hardware.boot@1.2-impl \
+#PRODUCT_PACKAGES += \
+    android.hardware.boot@1.2- \
     android.hardware.boot@1.2-impl.recovery \
     android.hardware.boot@1.2-service    
 
@@ -98,7 +99,7 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-service.rc
 
 # Mtk plpath utils
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     mtk_plpath_utils \
     mtk_plpath_utils.recovery
 
@@ -113,7 +114,7 @@ PRODUCT_PACKAGES += \
     android.hardware.security.sharedsecret
 
 # Keystore2
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     android.system.keystore2
 
 # Drm
