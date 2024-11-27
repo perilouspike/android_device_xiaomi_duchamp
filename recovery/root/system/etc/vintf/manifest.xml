@@ -41,11 +41,6 @@
         <name>netutils-wrapper</name>
         <version>1.0</version>
     </hal>
-    <hal format="aidl">
-        <name>android.system.keystore2</name>
-        <version>3</version>
-        <fqname>IKeystoreService/default</fqname>
-    </hal>
     <system-sdk>
         <version>29</version>
         <version>30</version>

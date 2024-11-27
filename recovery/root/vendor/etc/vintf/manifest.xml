@@ -260,11 +260,6 @@
         <transport>hwbinder</transport>
         <fqname>@1.0::IMiwillService/default</fqname>
     </hal>
-    <hal format="aidl">
-        <name>android.system.keystore2</name>
-        <version>3</version>
-        <fqname>IKeystoreService/default</fqname>
-    </hal>
     <sepolicy>
         <version>34.0</version>
     </sepolicy>

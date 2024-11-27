@@ -114,7 +114,7 @@ PRODUCT_PACKAGES += \
     android.hardware.security.sharedsecret
 
 # Keystore2
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     android.system.keystore2
 
 # Drm
